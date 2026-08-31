@@ -63,7 +63,16 @@ module.exports = function (eleventyConfig) {
   // per-item Gallery Photos & Videos collection) into one list of plain
   // objects the media-tile macro can render, optionally capped to `limit`.
   eleventyConfig.addFilter("combineMedia", function (quickPhotos, galleryEntries, limit) {
-    var items = (quickPhotos || []).map(function (src) {
+    // Decap's multi-select image widget stores a single selection as a
+    // plain string instead of a one-item array — normalize defensively
+    // so this can never break the build again, no matter how many
+    // photos are selected.
+    var quickList = Array.isArray(quickPhotos)
+      ? quickPhotos
+      : quickPhotos
+      ? [quickPhotos]
+      : [];
+    var items = quickList.map(function (src) {
       return { image: src };
     });
     (galleryEntries || []).forEach(function (entry) {
