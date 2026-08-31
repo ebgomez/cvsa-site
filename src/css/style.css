@@ -65,7 +65,9 @@ img{max-width:100%;display:block;}
 
 nav.top{background:var(--navy);color:#F3EFE6;}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:20px 28px;max-width:1080px;margin:0 auto;flex-wrap:wrap;gap:14px;}
-.word{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:0.03em;font-size:1.15rem;color:#fff;text-decoration:none;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{flex:none;display:block;}
+.word{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:0.03em;font-size:1.6rem;color:#fff;}
 .word span{color:var(--accent);}
 .nav-links{display:flex;gap:24px;font-family:"Oswald",sans-serif;font-size:0.78rem;letter-spacing:0.05em;text-transform:uppercase;flex-wrap:wrap;}
 .nav-links a{color:#C7CCD8;text-decoration:none;}
