@@ -46,6 +46,14 @@ collections:
                 options: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
               - { label: "Time", name: "time", widget: "string", hint: "Format exactly like: 6:30 PM - 8:00 PM" }
               - { label: "Groups Playing", name: "focus", widget: "string" }
+          - label: "Quick Gallery Photos"
+            name: "quickPhotos"
+            widget: "image"
+            multiple: true
+            required: false
+            media_folder: "/src/images/uploads"
+            public_folder: "/images/uploads"
+            hint: "Select several photos at once here for a fast bulk add — no captions, they just show up in the Gallery and on the homepage. For a single photo or video WITH a caption, use the 'Gallery Photos & Videos' section in the sidebar instead."
           - label: "Social Links"
             name: "social"
             widget: "object"

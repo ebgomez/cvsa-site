@@ -59,6 +59,19 @@ module.exports = function (eleventyConfig) {
     return `${new Date().getFullYear()}`;
   });
 
+  // Merges the two gallery sources (bulk "quick photos" and the fuller
+  // per-item Gallery Photos & Videos collection) into one list of plain
+  // objects the media-tile macro can render, optionally capped to `limit`.
+  eleventyConfig.addFilter("combineMedia", function (quickPhotos, galleryEntries, limit) {
+    var items = (quickPhotos || []).map(function (src) {
+      return { image: src };
+    });
+    (galleryEntries || []).forEach(function (entry) {
+      items.push(entry.data);
+    });
+    return limit ? items.slice(0, limit) : items;
+  });
+
   eleventyConfig.addFilter("jsonify", function (value) {
     return JSON.stringify(value);
   });

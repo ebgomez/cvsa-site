@@ -164,12 +164,29 @@ permalink: /
     </div>
     <div>
       <div class="court-divider"><span class="eyebrow" style="margin:0;"><span class="ball"></span>From the Gym</span><div class="cd-line"></div></div>
+      {% set homeMedia = site.quickPhotos | combineMedia(collections.galleryPhotos, 6) %}
       <div class="gallery-grid">
-        {% for i in range(0, 6) %}
-        <div class="tile"><span>Photo</span></div>
-        {% endfor %}
+        {% if homeMedia.length > 0 %}
+          {% for item in homeMedia %}
+          <div class="tile">
+            {% if item.videoUrl %}
+            <iframe src="{{ item.videoUrl | embedUrl }}" title="{{ item.caption or 'CVSA game video' }}" frameborder="0" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+            {% elif item.video %}
+            <video controls preload="metadata" src="{{ item.video }}"></video>
+            {% elif item.image %}
+            {% respImage item.image, item.caption or "CVSA game day photo" %}
+            {% endif %}
+          </div>
+          {% endfor %}
+        {% else %}
+          {% for i in range(0, 6) %}
+          <div class="tile"><span>Photo</span></div>
+          {% endfor %}
+        {% endif %}
       </div>
+      {% if homeMedia.length == 0 %}
       <p class="note" style="font-size:0.82rem;color:var(--ink-soft);font-style:italic;margin-top:10px;">Placeholder tiles — add real game-day photos from the Gallery page in the admin.</p>
+      {% endif %}
     </div>
   </div>
 </section>
