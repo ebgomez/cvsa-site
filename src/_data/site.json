@@ -1,17 +1,84 @@
 {
-  "title": "CVSA Hoops",
-  "tagline": "Central Valley Sports Association",
+  "contact": {
+    "email": "",
+    "phone": "",
+    "location": "Riverbank Recreation Department, Riverbank, CA"
+  },
   "nav": [
-    { "text": "Schedule", "url": "/schedule/" },
-    { "text": "Groups", "url": "/groups/" },
-    { "text": "Rules", "url": "/rules/" },
-    { "text": "Gallery", "url": "/gallery/" },
-    { "text": "News", "url": "/blog/" },
-    { "text": "Contact", "url": "/contact/" }
+    {
+      "text": "Schedule",
+      "url": "/schedule/"
+    },
+    {
+      "text": "Groups",
+      "url": "/groups/"
+    },
+    {
+      "text": "Rules",
+      "url": "/rules/"
+    },
+    {
+      "text": "Gallery",
+      "url": "/gallery/"
+    },
+    {
+      "text": "News",
+      "url": "/blog/"
+    },
+    {
+      "text": "Contact",
+      "url": "/contact/"
+    }
   ],
+  "nextGame": {
+    "time": "6:30 PM",
+    "day": "Thursday",
+    "group": "Full Court Group",
+    "location": "Cardozo Middle School Gym, 3525 Santa Fe St. Riverbank, CA 95367"
+  },
+  "social": {
+    "facebook": "",
+    "instagram": ""
+  },
+  "tagline": "Central Valley Sports Association",
+  "groups": [
+    {
+      "name": "Full Court Group",
+      "tag": "Thu · Sun",
+      "desc": "Competitive full-court runs for advanced players. Thursday evenings and Sunday mornings."
+    },
+    {
+      "name": "Halfcourt Group",
+      "tag": "Thu · Sun",
+      "desc": "Lower-impact, high cardio half-court games with the same competitive intensity. Age group target 35 & over."
+    }
+  ],
+  "schedule": [
+    {
+      "day": "Thursday",
+      "time": "6:30 PM – 8:00 PM",
+      "focus": "Half Court Group"
+    },
+    {
+      "day": "Thursday",
+      "time": "8:00 PM - 10:30 PM",
+      "focus": "Full Court, Younger Group"
+    },
+    {
+      "day": "Sunday",
+      "time": "11:00 AM - 1:30pm",
+      "focus": "Full Court. Mixed Age Group"
+    },
+    {
+      "day": "Sunday",
+      "time": "1:30 PM - 4:00 PM",
+      "focus": "Half Court, Over 45 Age Group"
+    }
+  ],
+  "title": "CVSA Hoops",
   "home": {
     "heroHeadline": "Real pickup basketball, run right, twice a week.",
-    "heroDek": "Organized full and half-court games for adults 15+ in Riverbank — no chaos, no drama, just consistent, competitive runs with people who show up to play.",
+    "heroDek": "Organized full and half-court games for adults 15+ in Riverbank — no chaos, no drama, just consistent, competitive runs for ball players of all ages.",
     "valueProps": [
       {
         "title": "Actually coordinated",
@@ -26,46 +93,5 @@
         "desc": "Ten-plus years running open gym in the Central Valley, with no outside program cutting corners on coordination."
       }
     ]
-  },
-  "nextGame": {
-    "time": "6:30 PM",
-    "day": "Thursday",
-    "group": "Full Court Group",
-    "location": "Riverbank Recreation Gym"
-  },
-  "groups": [
-    {
-      "name": "Full Court Group",
-      "tag": "Thu · Sun",
-      "desc": "Competitive full-court runs for advanced players. Thursday evenings and Sunday mornings."
-    },
-    {
-      "name": "Halfcourt Group",
-      "tag": "Sun AM",
-      "desc": "Lower-impact half-court games with the same competitive intensity."
-    },
-    {
-      "name": "Over 45 Group",
-      "tag": "Sun",
-      "desc": "A run built around veteran players' pace and experience."
-    },
-    {
-      "name": "No Way Shane!",
-      "tag": "Rotating",
-      "desc": "The group that started it all — ask a regular what the name means."
-    }
-  ],
-  "schedule": [
-    { "day": "Thursday", "time": "6:30 PM – 10:00 PM", "focus": "Full Court Group" },
-    { "day": "Sunday", "time": "8:00 AM – 4:00 PM", "focus": "Full Court, Halfcourt & Over 45 Groups (rotating)" }
-  ],
-  "social": {
-    "facebook": "",
-    "instagram": ""
-  },
-  "contact": {
-    "email": "",
-    "phone": "",
-    "location": "Riverbank Recreation Department, Riverbank, CA"
   }
 }
