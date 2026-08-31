@@ -1,0 +1,22 @@
+---
+layout: page.njk
+title: Gallery
+subtitle: Game days, in pictures.
+permalink: /gallery/
+---
+{% if collections.galleryPhotos.length == 0 %}
+<div class="note-box"><strong>No photos yet —</strong> add game-day photos through the admin (Gallery Photos collection) and they'll appear here automatically.</div>
+<div class="gallery-grid">
+  {% for i in range(0, 6) %}
+  <div class="tile"><span>Photo</span></div>
+  {% endfor %}
+</div>
+{% else %}
+<div class="gallery-grid">
+  {% for photo in collections.galleryPhotos %}
+  <div class="tile">
+    <img src="{{ photo.data.image }}" alt="{{ photo.data.caption or 'CVSA game day photo' }}">
+  </div>
+  {% endfor %}
+</div>
+{% endif %}

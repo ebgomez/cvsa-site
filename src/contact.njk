@@ -1,0 +1,40 @@
+---
+layout: page.njk
+title: Contact
+subtitle: Questions, sign-ups, or just want to know where to show up.
+permalink: /contact/
+---
+{% if not site.contact.email and not site.contact.phone %}
+<div class="note-box"><strong>Add real contact info —</strong> edit Site Settings in the admin to fill in a phone number and email address here.</div>
+{% endif %}
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;">
+  <div>
+    <h2 style="font-size:1.1rem;">Reach us directly</h2>
+    <div class="contact-info">
+      {% if site.contact.phone %}<div><strong>Phone:</strong> {{ site.contact.phone }}</div>{% endif %}
+      {% if site.contact.email %}<div><strong>Email:</strong> {{ site.contact.email }}</div>{% endif %}
+      <div><strong>Location:</strong> {{ site.contact.location }}</div>
+    </div>
+  </div>
+  <div>
+    <h2 style="font-size:1.1rem;">Send a message</h2>
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
+      <input type="hidden" name="form-name" value="contact">
+      <p class="hidden" style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+      <div>
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name" required>
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" required>
+      </div>
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </div>
+</div>

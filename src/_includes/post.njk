@@ -1,0 +1,14 @@
+---
+layout: base.njk
+---
+<section class="page-hero">
+  <div class="container">
+    <div class="eyebrow" style="color:var(--accent);"><span class="ball"></span>{{ page.date | dateDisplay }}</div>
+    <h1>{{ title }}</h1>
+  </div>
+</section>
+<section class="band">
+  <div class="container prose">
+    {{ content | safe }}
+  </div>
+</section>

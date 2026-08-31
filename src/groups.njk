@@ -1,0 +1,15 @@
+---
+layout: page.njk
+title: Groups
+subtitle: Find the run that fits your pace.
+permalink: /groups/
+---
+<div class="group-grid" style="margin-top:8px;">
+  {% for g in site.groups %}
+  <div class="group">
+    <span class="tag">{{ g.tag }}</span>
+    <h3>{{ g.name }}</h3>
+    <p>{{ g.desc }}</p>
+  </div>
+  {% endfor %}
+</div>

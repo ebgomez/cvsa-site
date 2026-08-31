@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }} · {{ site.title }}</title>
+  <meta name="description" content="{{ description or site.tagline }}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="top">
+    <div class="nav-inner">
+      <a href="/" class="word">CVSA <span>Hoops</span></a>
+      <div class="nav-links">
+        {% for item in site.nav %}
+        <a href="{{ item.url }}">{{ item.text }}</a>
+        {% endfor %}
+      </div>
+      <a href="/contact/" class="btn on-navy" style="padding:10px 18px;">Join a Game</a>
+    </div>
+  </nav>
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <footer>
+    <div class="container foot-row">
+      <div>© {% year %} {{ site.tagline }} · {{ site.contact.location }}</div>
+      <div style="display:flex;gap:18px;">
+        {% if site.social.facebook %}<a href="{{ site.social.facebook }}">Facebook</a>{% endif %}
+        {% if site.social.instagram %}<a href="{{ site.social.instagram }}">Instagram</a>{% endif %}
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", function (user) {
+        if (!user) {
+          window.netlifyIdentity.on("login", function () {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+---
+layout: page.njk
+title: News
+subtitle: Session updates, schedule changes, and announcements.
+permalink: /blog/
+---
+<div class="news-list">
+  {% for post in collections.posts %}
+  <div class="news-item">
+    <div class="news-date">{{ post.data.date | dateDisplay }}</div>
+    <div><h3><a href="{{ post.url }}" style="color:inherit;">{{ post.data.title }}</a></h3><p>{{ post.data.excerpt }}</p></div>
+  </div>
+  {% endfor %}
+</div>

@@ -1,0 +1,98 @@
+---
+layout: base.njk
+title: Home
+permalink: /
+---
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow" style="color:var(--accent);"><span class="ball"></span>{{ site.tagline }}</div>
+      <h1>Real pickup basketball, <em>run right</em>, twice a week.</h1>
+      <p class="dek">Organized full and half-court games for adults 15+ in Riverbank — no chaos, no drama, just consistent, competitive runs with people who show up to play.</p>
+      <div class="hero-ctas">
+        <a href="/schedule/" class="btn on-navy">See This Week's Games</a>
+        <a href="/about/" class="btn on-navy ghost">How It Works</a>
+      </div>
+    </div>
+    <div class="scoreboard">
+      <div class="sb-label">Next Game</div>
+      <div class="sb-time">{{ site.nextGame.time }}</div>
+      <div class="sb-day">{{ site.nextGame.day }} · {{ site.nextGame.group }}</div>
+      <div class="sb-divider"></div>
+      <div class="sb-loc">{{ site.nextGame.location }}</div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="container">
+    <div class="court-divider"><span class="eyebrow" style="margin:0;"><span class="ball"></span>Why Players Stay</span><div class="cd-line"></div></div>
+    <div class="value-grid">
+      <div class="card">
+        <h3>Actually coordinated</h3>
+        <p>Attendance and game flow are managed every session — not a free-for-all. Everyone gets real run time.</p>
+      </div>
+      <div class="card">
+        <h3>All skill levels, real competition</h3>
+        <p>From weekend regulars to former high school and college players — full court for those who want it, half court for a lower-impact option.</p>
+      </div>
+      <div class="card">
+        <h3>Built by players, for players</h3>
+        <p>Ten-plus years running open gym in the Central Valley, with no outside program cutting corners on coordination.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" style="background:var(--surface-alt);">
+  <div class="container">
+    <div class="court-divider"><span class="eyebrow" style="margin:0;"><span class="ball"></span>Find Your Group</span><div class="cd-line"></div></div>
+    <div class="group-grid">
+      {% for g in site.groups %}
+      <div class="group">
+        <span class="tag">{{ g.tag }}</span>
+        <h3>{{ g.name }}</h3>
+        <p>{{ g.desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;">
+    <div>
+      <div class="court-divider"><span class="eyebrow" style="margin:0;"><span class="ball"></span>On the Court</span><div class="cd-line"></div></div>
+      <div class="news-list">
+        {% for post in collections.posts | reverse %}
+        {% if loop.index <= 3 %}
+        <div class="news-item">
+          <div class="news-date">{{ post.data.date | dateDisplay }}</div>
+          <div><h3><a href="{{ post.url }}" style="color:inherit;">{{ post.data.title }}</a></h3><p>{{ post.data.excerpt }}</p></div>
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    <div>
+      <div class="court-divider"><span class="eyebrow" style="margin:0;"><span class="ball"></span>From the Gym</span><div class="cd-line"></div></div>
+      <div class="gallery-grid">
+        {% for i in range(0, 6) %}
+        <div class="tile"><span>Photo</span></div>
+        {% endfor %}
+      </div>
+      <p class="note" style="font-size:0.82rem;color:var(--ink-soft);font-style:italic;margin-top:10px;">Placeholder tiles — add real game-day photos from the Gallery page in the admin.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band cta-band">
+  <div class="container">
+    <h2>Ready to run with us?</h2>
+    <p>Spots are limited to keep games playable. Sign up for the next session or drop in as a walk-in — first-timers always welcome.</p>
+    <div class="hero-ctas">
+      <a href="/contact/" class="btn on-navy">Sign Up</a>
+      <a href="/contact/" class="btn on-navy ghost">Contact Us</a>
+    </div>
+  </div>
+</section>

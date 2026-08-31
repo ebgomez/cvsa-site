@@ -1,0 +1,17 @@
+---
+layout: page.njk
+title: Schedule
+subtitle: Weekly game times at a glance.
+permalink: /schedule/
+---
+<table class="schedule-table">
+  <thead>
+    <tr><th>Day</th><th>Time</th><th>Groups Playing</th></tr>
+  </thead>
+  <tbody>
+    {% for s in site.schedule %}
+    <tr><td>{{ s.day }}</td><td>{{ s.time }}</td><td>{{ s.focus }}</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+<p>Games run in four-month sessions — sign up at the start of each block to guarantee your spot. See <a href="/groups/">Groups</a> for which run fits you best, or head to <a href="/contact/">Contact</a> to join.</p>
