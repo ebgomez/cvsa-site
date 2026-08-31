@@ -1,4 +1,4 @@
 ---
-image: /images/uploads/dsc00045.jpg
+image: /images/uploads/img_0468.jpeg
 permalink: false
 ---
