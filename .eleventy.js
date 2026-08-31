@@ -17,6 +17,10 @@ module.exports = function (eleventyConfig) {
     return `${new Date().getFullYear()}`;
   });
 
+  eleventyConfig.addFilter("jsonify", function (value) {
+    return JSON.stringify(value);
+  });
+
   eleventyConfig.addFilter("dateDisplay", function (dateObj) {
     return new Date(dateObj).toLocaleDateString("en-US", {
       month: "short",

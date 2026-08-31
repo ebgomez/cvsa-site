@@ -14,15 +14,88 @@ permalink: /
         <a href="/about/" class="btn on-navy ghost">How It Works</a>
       </div>
     </div>
-    <div class="scoreboard">
+    <div class="scoreboard" id="next-game">
       <div class="sb-label">Next Game</div>
-      <div class="sb-time">{{ site.nextGame.time }}</div>
-      <div class="sb-day">{{ site.nextGame.day }} · {{ site.nextGame.group }}</div>
+      <div class="sb-time" id="ng-time">{{ site.schedule[0].time }}</div>
+      <div class="sb-day" id="ng-day">{{ site.schedule[0].day }} · {{ site.schedule[0].focus }}</div>
       <div class="sb-divider"></div>
-      <div class="sb-loc">{{ site.nextGame.location }}</div>
+      <div class="sb-loc">{{ site.contact.location }}</div>
     </div>
   </div>
 </section>
+
+<script>
+  var CVSA_SCHEDULE = {{ site.schedule | jsonify | safe }};
+</script>
+<script>
+(function () {
+  function parseTime(str) {
+    var m = String(str).match(/(\d{1,2}):(\d{2})\s*([ap]m)/i);
+    if (!m) return null;
+    var h = parseInt(m[1], 10);
+    var min = parseInt(m[2], 10);
+    var ap = m[3].toLowerCase();
+    if (ap === "pm" && h !== 12) h += 12;
+    if (ap === "am" && h === 12) h = 0;
+    return h * 60 + min;
+  }
+  function parseRange(str) {
+    var parts = String(str).split(/[-–—]/);
+    if (parts.length < 2) return null;
+    var start = parseTime(parts[0]);
+    var end = parseTime(parts[1]);
+    if (start === null || end === null) return null;
+    return { start: start, end: end };
+  }
+
+  var DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+  function getNowInGymTimezone() {
+    var parts = new Intl.DateTimeFormat("en-US", {
+      timeZone: "America/Los_Angeles",
+      weekday: "long",
+      hour: "2-digit",
+      minute: "2-digit",
+      hourCycle: "h23",
+    }).formatToParts(new Date());
+    var lookup = {};
+    parts.forEach(function (p) { lookup[p.type] = p.value; });
+    return {
+      dayName: lookup.weekday,
+      minutes: parseInt(lookup.hour, 10) * 60 + parseInt(lookup.minute, 10),
+    };
+  }
+
+  function findNextSession(schedule, nowDayName, nowMinutes) {
+    var startIdx = DAYS.indexOf(nowDayName);
+    for (var offset = 0; offset < 8; offset++) {
+      var dayName = DAYS[(startIdx + offset) % 7];
+      var todays = schedule
+        .filter(function (s) { return s.day === dayName; })
+        .map(function (s) { return Object.assign({}, s, { range: parseRange(s.time) }); })
+        .filter(function (s) { return s.range && (offset > 0 || s.range.end > nowMinutes); })
+        .sort(function (a, b) { return a.range.start - b.range.start; });
+      if (todays.length) {
+        return { session: todays[0], dayName: dayName, isToday: offset === 0 };
+      }
+    }
+    return null;
+  }
+
+  try {
+    if (!CVSA_SCHEDULE || !CVSA_SCHEDULE.length) return;
+    var now = getNowInGymTimezone();
+    var result = findNextSession(CVSA_SCHEDULE, now.dayName, now.minutes);
+    if (!result) return;
+    var dayLabel = result.isToday ? "Today" : result.dayName;
+    var startTimeMatch = String(result.session.time).match(/\d{1,2}:\d{2}\s*[ap]m/i);
+    document.getElementById("ng-time").textContent = startTimeMatch ? startTimeMatch[0] : result.session.time;
+    document.getElementById("ng-day").textContent = dayLabel + " · " + result.session.focus;
+  } catch (e) {
+    /* Fall back to whatever was server-rendered above */
+  }
+})();
+</script>
 
 <section class="band">
   <div class="container">

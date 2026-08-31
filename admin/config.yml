@@ -28,14 +28,6 @@ collections:
                 fields:
                   - { label: "Title", name: "title", widget: "string" }
                   - { label: "Description", name: "desc", widget: "text" }
-          - label: "Next Game"
-            name: "nextGame"
-            widget: "object"
-            fields:
-              - { label: "Time", name: "time", widget: "string" }
-              - { label: "Day", name: "day", widget: "string" }
-              - { label: "Group", name: "group", widget: "string" }
-              - { label: "Location", name: "location", widget: "string" }
           - label: "Groups"
             name: "groups"
             widget: "list"
@@ -46,9 +38,13 @@ collections:
           - label: "Weekly Schedule"
             name: "schedule"
             widget: "list"
+            hint: "This drives both the Schedule page AND the automatic 'Next Game' box on the homepage — it always shows whichever session below is coming up next, so you only need to update this if the recurring weekly pattern itself changes."
             fields:
-              - { label: "Day", name: "day", widget: "string" }
-              - { label: "Time", name: "time", widget: "string" }
+              - label: "Day"
+                name: "day"
+                widget: "select"
+                options: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+              - { label: "Time", name: "time", widget: "string", hint: "Format exactly like: 6:30 PM - 8:00 PM" }
               - { label: "Groups Playing", name: "focus", widget: "string" }
           - label: "Social Links"
             name: "social"
