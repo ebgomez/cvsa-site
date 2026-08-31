@@ -15,9 +15,14 @@ permalink: /
       </div>
     </div>
     <div class="scoreboard" id="next-game">
-      <div class="sb-label">Next Game</div>
-      <div class="sb-time" id="ng-time">{{ site.schedule[0].time }}</div>
-      <div class="sb-day" id="ng-day">{{ site.schedule[0].day }} · {{ site.schedule[0].focus }}</div>
+      <div class="sb-label">Next Game Day</div>
+      <div class="sb-day-big" id="ng-day-big">{{ site.schedule[0].day }}</div>
+      <div class="sb-sessions" id="ng-sessions">
+        <div class="sb-session-block">
+          <div class="sb-session-time">{{ site.schedule[0].time }}</div>
+          <div class="sb-session-label">{{ site.schedule[0].focus }}</div>
+        </div>
+      </div>
       <div class="sb-divider"></div>
       <div class="sb-loc">{{ site.contact.location }}</div>
     </div>
@@ -66,17 +71,19 @@ permalink: /
     };
   }
 
-  function findNextSession(schedule, nowDayName, nowMinutes) {
+  // Finds the next game DAY (today or upcoming) and returns every session
+  // on it that hasn't already ended yet — not just the single soonest one.
+  function findNextGameDay(schedule, nowDayName, nowMinutes) {
     var startIdx = DAYS.indexOf(nowDayName);
     for (var offset = 0; offset < 8; offset++) {
       var dayName = DAYS[(startIdx + offset) % 7];
-      var todays = schedule
+      var sessions = schedule
         .filter(function (s) { return s.day === dayName; })
         .map(function (s) { return Object.assign({}, s, { range: parseRange(s.time) }); })
         .filter(function (s) { return s.range && (offset > 0 || s.range.end > nowMinutes); })
         .sort(function (a, b) { return a.range.start - b.range.start; });
-      if (todays.length) {
-        return { session: todays[0], dayName: dayName, isToday: offset === 0 };
+      if (sessions.length) {
+        return { sessions: sessions, dayName: dayName, isToday: offset === 0 };
       }
     }
     return null;
@@ -85,12 +92,26 @@ permalink: /
   try {
     if (!CVSA_SCHEDULE || !CVSA_SCHEDULE.length) return;
     var now = getNowInGymTimezone();
-    var result = findNextSession(CVSA_SCHEDULE, now.dayName, now.minutes);
+    var result = findNextGameDay(CVSA_SCHEDULE, now.dayName, now.minutes);
     if (!result) return;
-    var dayLabel = result.isToday ? "Today" : result.dayName;
-    var startTimeMatch = String(result.session.time).match(/\d{1,2}:\d{2}\s*[ap]m/i);
-    document.getElementById("ng-time").textContent = startTimeMatch ? startTimeMatch[0] : result.session.time;
-    document.getElementById("ng-day").textContent = dayLabel + " · " + result.session.focus;
+
+    document.getElementById("ng-day-big").textContent = result.isToday ? "Today" : result.dayName;
+
+    var list = document.getElementById("ng-sessions");
+    list.innerHTML = "";
+    result.sessions.forEach(function (s) {
+      var block = document.createElement("div");
+      block.className = "sb-session-block";
+      var time = document.createElement("div");
+      time.className = "sb-session-time";
+      time.textContent = s.time;
+      var label = document.createElement("div");
+      label.className = "sb-session-label";
+      label.textContent = s.focus;
+      block.appendChild(time);
+      block.appendChild(label);
+      list.appendChild(block);
+    });
   } catch (e) {
     /* Fall back to whatever was server-rendered above */
   }

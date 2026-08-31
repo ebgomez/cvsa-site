@@ -85,10 +85,13 @@ nav.top{background:var(--navy);color:#F3EFE6;}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;}
 
 .scoreboard{background:#0B0E14;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:24px 26px;}
-.scoreboard .sb-label{font-family:"Oswald",sans-serif;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:#7C8394;margin-bottom:12px;}
-.sb-time{font-family:"Oswald",sans-serif;font-variant-numeric:tabular-nums;font-size:2.4rem;font-weight:700;color:var(--accent);letter-spacing:0.01em;line-height:1;}
-.sb-day{font-family:"Oswald",sans-serif;color:#F3EFE6;font-size:0.98rem;letter-spacing:0.05em;margin-top:6px;}
-.sb-loc{color:#8A91A1;font-size:0.86rem;margin-top:10px;}
+.scoreboard .sb-label{font-family:"Oswald",sans-serif;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:#7C8394;margin-bottom:10px;}
+.sb-day-big{font-family:"Oswald",sans-serif;font-size:1.1rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F3EFE6;margin-bottom:16px;}
+.sb-sessions{display:flex;flex-direction:column;gap:16px;}
+.sb-session-block + .sb-session-block{padding-top:14px;border-top:1px dashed rgba(255,255,255,0.08);}
+.sb-session-time{font-family:"Oswald",sans-serif;font-variant-numeric:tabular-nums;font-size:1.7rem;font-weight:700;color:var(--accent);letter-spacing:0.01em;line-height:1.15;}
+.sb-session-label{font-family:"Oswald",sans-serif;color:#B7BECC;font-size:0.86rem;letter-spacing:0.03em;margin-top:4px;}
+.sb-loc{color:#8A91A1;font-size:0.86rem;margin-top:4px;}
 .sb-divider{height:1px;background:rgba(255,255,255,0.08);margin:16px 0;}
 
 .court-divider{display:flex;align-items:center;gap:12px;margin:0 0 36px;}
