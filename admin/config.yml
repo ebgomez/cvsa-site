@@ -94,7 +94,7 @@ collections:
   - name: "gallery"
     label: "Gallery Photos"
     folder: "src/gallery"
-    media_folder: "/images/uploads"
+    media_folder: "/src/images/uploads"
     public_folder: "/images/uploads"
     create: true
     fields:
