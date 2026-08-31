@@ -2,15 +2,20 @@ const eleventyImg = require("@11ty/eleventy-img");
 const queueImage = eleventyImg.default;
 const { generateHTML } = eleventyImg;
 const path = require("path");
+const fs = require("fs");
+
+function toFilePath(publicPath) {
+  return publicPath.startsWith("/images/")
+    ? path.join("src/images", publicPath.slice("/images/".length))
+    : publicPath;
+}
 
 async function respImageShortcode(src, alt, sizes) {
   if (!src) return "";
 
   // Gallery entries store the public URL (e.g. /images/uploads/photo.jpg),
   // which the passthrough copy maps from src/images/uploads/photo.jpg.
-  let inputPath = src.startsWith("/images/")
-    ? path.join("src/images", src.slice("/images/".length))
-    : src;
+  let inputPath = toFilePath(src);
 
   try {
     let metadata = await queueImage(inputPath, {
@@ -78,6 +83,27 @@ module.exports = function (eleventyConfig) {
     (galleryEntries || []).forEach(function (entry) {
       items.push(entry.data);
     });
+
+    // Drop anything whose file was deleted from the media library while
+    // an entry (or the Quick Photos list) still pointed at it — shows up
+    // as a blank tile otherwise. Link-based videos have no local file.
+    items = items.filter(function (item) {
+      if (item.videoUrl) return true;
+      var src = item.image || item.video;
+      if (!src) return false;
+      return fs.existsSync(toFilePath(src));
+    });
+
+    // De-duplicate: the same photo can end up listed twice if it's added
+    // to both Quick Photos and as its own Gallery entry.
+    var seen = {};
+    items = items.filter(function (item) {
+      var key = item.image || item.video || item.videoUrl;
+      if (!key || seen[key]) return false;
+      seen[key] = true;
+      return true;
+    });
+
     return limit ? items.slice(0, limit) : items;
   });
 
