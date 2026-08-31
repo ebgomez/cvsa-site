@@ -92,12 +92,14 @@ collections:
           - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "gallery"
-    label: "Gallery Photos"
+    label: "Gallery Photos & Videos"
     folder: "src/gallery"
     media_folder: "/src/images/uploads"
     public_folder: "/images/uploads"
     create: true
     fields:
-      - { label: "Photo", name: "image", widget: "image" }
+      - { label: "Photo", name: "image", widget: "image", required: false, hint: "Fill in EITHER this photo field OR one of the two video options below — not more than one." }
+      - { label: "Video file (short clips only)", name: "video", widget: "file", required: false, hint: "Keep it small — under ~20MB. GitHub hard-rejects anything over 100MB, and big videos slow the site down. For anything longer, use the link field instead." }
+      - { label: "Or a YouTube / Vimeo link", name: "videoUrl", widget: "string", required: false, hint: "Paste a normal video URL (e.g. https://youtube.com/watch?v=... or https://vimeo.com/...). Recommended for anything more than a few seconds — upload it there first (Unlisted is fine) and link it here." }
       - { label: "Caption", name: "caption", widget: "string", required: false }
       - { label: "Permalink", name: "permalink", widget: "hidden", default: false }

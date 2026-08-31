@@ -21,6 +21,15 @@ module.exports = function (eleventyConfig) {
     return JSON.stringify(value);
   });
 
+  eleventyConfig.addFilter("embedUrl", function (url) {
+    if (!url) return null;
+    var yt = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/);
+    if (yt) return "https://www.youtube.com/embed/" + yt[1];
+    var vimeo = url.match(/vimeo\.com\/(\d+)/);
+    if (vimeo) return "https://player.vimeo.com/video/" + vimeo[1];
+    return url;
+  });
+
   eleventyConfig.addFilter("dateDisplay", function (dateObj) {
     return new Date(dateObj).toLocaleDateString("en-US", {
       month: "short",

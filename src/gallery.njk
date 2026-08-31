@@ -1,11 +1,11 @@
 ---
 layout: page.njk
 title: Gallery
-subtitle: Game days, in pictures.
+subtitle: Game days, in pictures (and video).
 permalink: /gallery/
 ---
 {% if collections.galleryPhotos.length == 0 %}
-<div class="note-box"><strong>No photos yet —</strong> add game-day photos through the admin (Gallery Photos collection) and they'll appear here automatically.</div>
+<div class="note-box"><strong>No photos yet —</strong> add game-day photos or videos through the admin (Gallery Photos & Videos collection) and they'll appear here automatically.</div>
 <div class="gallery-grid">
   {% for i in range(0, 6) %}
   <div class="tile"><span>Photo</span></div>
@@ -15,7 +15,13 @@ permalink: /gallery/
 <div class="gallery-grid">
   {% for photo in collections.galleryPhotos %}
   <div class="tile">
+    {% if photo.data.videoUrl %}
+    <iframe src="{{ photo.data.videoUrl | embedUrl }}" title="{{ photo.data.caption or 'CVSA game video' }}" frameborder="0" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+    {% elif photo.data.video %}
+    <video controls preload="metadata" src="{{ photo.data.video }}"></video>
+    {% else %}
     <img src="{{ photo.data.image }}" alt="{{ photo.data.caption or 'CVSA game day photo' }}">
+    {% endif %}
   </div>
   {% endfor %}
 </div>
