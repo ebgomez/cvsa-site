@@ -4,9 +4,9 @@ title: Gallery
 subtitle: Game days, in pictures (and video).
 permalink: /gallery/
 ---
-{% set allMedia = site.quickPhotos | combineMedia(collections.galleryPhotos) %}
+{% set allMedia = gallery.photos | combineMedia(collections.videos) %}
 {% if allMedia.length == 0 %}
-<div class="note-box"><strong>No photos yet —</strong> add game-day photos or videos through the admin (Gallery Photos & Videos, or Quick Gallery Photos for a fast bulk add) and they'll appear here automatically.</div>
+<div class="note-box"><strong>No photos yet —</strong> add game-day photos through the admin's Photos section (or a video through Videos) and they'll appear here automatically.</div>
 <div class="gallery-grid">
   {% for i in range(0, 6) %}
   <div class="tile"><span>Photo</span></div>

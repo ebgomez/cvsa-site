@@ -56,8 +56,8 @@ module.exports = function (eleventyConfig) {
       .sort((a, b) => b.date - a.date);
   });
 
-  eleventyConfig.addCollection("galleryPhotos", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("src/gallery/*.md");
+  eleventyConfig.addCollection("videos", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("src/videos/*.md");
   });
 
   eleventyConfig.addShortcode("year", function () {
