@@ -12,23 +12,31 @@ async function respImageShortcode(src, alt, sizes) {
     ? path.join("src/images", src.slice("/images/".length))
     : src;
 
-  let metadata = await queueImage(inputPath, {
-    widths: [400, 800],
-    formats: ["webp", "jpeg"],
-    outputDir: "_site/img/",
-    urlPath: "/img/",
-    filenameFormat: function (id, filePath, width, format) {
-      const name = path.basename(filePath, path.extname(filePath));
-      return `${name}-${width}w.${format}`;
-    },
-  });
+  try {
+    let metadata = await queueImage(inputPath, {
+      widths: [400, 800],
+      formats: ["webp", "jpeg"],
+      outputDir: "_site/img/",
+      urlPath: "/img/",
+      filenameFormat: function (id, filePath, width, format) {
+        const name = path.basename(filePath, path.extname(filePath));
+        return `${name}-${width}w.${format}`;
+      },
+    });
 
-  return generateHTML(metadata, {
-    alt: alt || "",
-    sizes: sizes || "(min-width: 820px) 33vw, 50vw",
-    loading: "lazy",
-    decoding: "async",
-  });
+    return generateHTML(metadata, {
+      alt: alt || "",
+      sizes: sizes || "(min-width: 820px) 33vw, 50vw",
+      loading: "lazy",
+      decoding: "async",
+    });
+  } catch (err) {
+    // A single broken/missing image (e.g. its file was deleted from the
+    // media library but a gallery entry still points at it) must never
+    // take down the whole site build. Skip it and keep going.
+    console.warn(`[gallery] Skipping missing/broken image "${src}": ${err.message}`);
+    return "";
+  }
 }
 
 module.exports = function (eleventyConfig) {
