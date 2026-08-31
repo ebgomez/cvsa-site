@@ -1,5 +1,4 @@
 {
-  "quickPhotos": [],
   "contact": {
     "email": "cvsahoopster@gmail.com",
     "phone": "209-402-3998",
@@ -35,6 +34,9 @@
     "facebook": "https://www.facebook.com/groups/CVSABBALL/?ref=share_group_link&mibextid=wwXIfr",
     "instagram": "https://www.instagram.com/cvsa.basketball?igsi=NTc4MTIwNjQ2YQ=="
   },
+  "quickPhotos": [
+    "/images/uploads/img_1390.jpeg"
+  ],
   "tagline": "Central Valley Sports Association",
   "groups": [
     {
