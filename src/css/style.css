@@ -64,7 +64,7 @@ img{max-width:100%;display:block;}
 .btn.on-navy.ghost{background:transparent;color:#F3EFE6;border-color:rgba(255,255,255,0.3);}
 
 nav.top{background:var(--navy);color:#F3EFE6;}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:20px 28px;max-width:1080px;margin:0 auto;flex-wrap:wrap;gap:14px;}
+.nav-inner{position:relative;display:flex;align-items:center;justify-content:space-between;padding:20px 28px;max-width:1080px;margin:0 auto;flex-wrap:wrap;gap:14px;}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
 .logo-icon{flex:none;display:block;}
 .word{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:0.03em;font-size:1.6rem;color:#fff;}
@@ -72,6 +72,9 @@ nav.top{background:var(--navy);color:#F3EFE6;}
 .nav-links{display:flex;gap:24px;font-family:"Oswald",sans-serif;font-size:0.78rem;letter-spacing:0.05em;text-transform:uppercase;flex-wrap:wrap;}
 .nav-links a{color:#C7CCD8;text-decoration:none;}
 .nav-links a:hover{color:#fff;}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;padding:0;background:none;border:1px solid rgba(255,255,255,0.2);border-radius:6px;cursor:pointer;}
+.nav-toggle span{display:block;width:20px;height:2px;background:#fff;border-radius:2px;margin:0 auto;}
 
 .hero{
   background:
@@ -168,5 +171,21 @@ footer{background:var(--navy);color:#8A91A1;padding:32px 0;font-size:0.85rem;}
   .value-grid{grid-template-columns:1fr;}
   .group-grid{grid-template-columns:1fr 1fr;}
   .gallery-grid{grid-template-columns:1fr 1fr;}
-  .nav-links{display:none;}
+  .nav-toggle{display:flex;}
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    flex-direction:column;
+    gap:0;
+    background:var(--navy);
+    border-top:1px solid rgba(255,255,255,0.1);
+    padding:8px 28px 20px;
+    box-shadow:0 12px 24px rgba(0,0,0,0.35);
+  }
+  .nav-links.open{display:flex;}
+  .nav-links a{padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.08);}
+  .nav-links a:last-child{border-bottom:none;}
 }
