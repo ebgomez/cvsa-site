@@ -7,8 +7,8 @@ permalink: /
   <div class="container hero-grid">
     <div>
       <div class="eyebrow" style="color:var(--accent);"><span class="ball"></span>{{ site.tagline }}</div>
-      <h1>Real pickup basketball, <em>run right</em>, twice a week.</h1>
-      <p class="dek">Organized full and half-court games for adults 15+ in Riverbank — no chaos, no drama, just consistent, competitive runs with people who show up to play.</p>
+      <h1>{{ site.home.heroHeadline }}</h1>
+      <p class="dek">{{ site.home.heroDek }}</p>
       <div class="hero-ctas">
         <a href="/schedule/" class="btn on-navy">See This Week's Games</a>
         <a href="/about/" class="btn on-navy ghost">How It Works</a>
@@ -28,18 +28,12 @@ permalink: /
   <div class="container">
     <div class="court-divider"><span class="eyebrow" style="margin:0;"><span class="ball"></span>Why Players Stay</span><div class="cd-line"></div></div>
     <div class="value-grid">
+      {% for v in site.home.valueProps %}
       <div class="card">
-        <h3>Actually coordinated</h3>
-        <p>Attendance and game flow are managed every session — not a free-for-all. Everyone gets real run time.</p>
+        <h3>{{ v.title }}</h3>
+        <p>{{ v.desc }}</p>
       </div>
-      <div class="card">
-        <h3>All skill levels, real competition</h3>
-        <p>From weekend regulars to former high school and college players — full court for those who want it, half court for a lower-impact option.</p>
-      </div>
-      <div class="card">
-        <h3>Built by players, for players</h3>
-        <p>Ten-plus years running open gym in the Central Valley, with no outside program cutting corners on coordination.</p>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>

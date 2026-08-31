@@ -15,6 +15,18 @@ collections:
         fields:
           - { label: "Site Title", name: "title", widget: "string" }
           - { label: "Tagline", name: "tagline", widget: "string" }
+          - label: "Homepage"
+            name: "home"
+            widget: "object"
+            fields:
+              - { label: "Headline", name: "heroHeadline", widget: "string" }
+              - { label: "Subtext", name: "heroDek", widget: "text" }
+              - label: "Why Players Stay (3 cards)"
+                name: "valueProps"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "desc", widget: "text" }
           - label: "Next Game"
             name: "nextGame"
             widget: "object"

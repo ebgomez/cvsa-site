@@ -9,6 +9,24 @@
     { "text": "News", "url": "/blog/" },
     { "text": "Contact", "url": "/contact/" }
   ],
+  "home": {
+    "heroHeadline": "Real pickup basketball, run right, twice a week.",
+    "heroDek": "Organized full and half-court games for adults 15+ in Riverbank — no chaos, no drama, just consistent, competitive runs with people who show up to play.",
+    "valueProps": [
+      {
+        "title": "Actually coordinated",
+        "desc": "Attendance and game flow are managed every session — not a free-for-all. Everyone gets real run time."
+      },
+      {
+        "title": "All skill levels, real competition",
+        "desc": "From weekend regulars to former high school and college players — full court for those who want it, half court for a lower-impact option."
+      },
+      {
+        "title": "Built by players, for players",
+        "desc": "Ten-plus years running open gym in the Central Valley, with no outside program cutting corners on coordination."
+      }
+    ]
+  },
   "nextGame": {
     "time": "6:30 PM",
     "day": "Thursday",
