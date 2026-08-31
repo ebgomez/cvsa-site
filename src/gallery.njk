@@ -20,7 +20,7 @@ permalink: /gallery/
     {% elif photo.data.video %}
     <video controls preload="metadata" src="{{ photo.data.video }}"></video>
     {% else %}
-    <img src="{{ photo.data.image }}" alt="{{ photo.data.caption or 'CVSA game day photo' }}">
+    {% respImage photo.data.image, photo.data.caption or "CVSA game day photo" %}
     {% endif %}
   </div>
   {% endfor %}
