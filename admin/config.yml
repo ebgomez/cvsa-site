@@ -110,11 +110,8 @@ collections:
   - name: "videos"
     label: "Videos"
     folder: "src/videos"
-    media_folder: "/src/images/uploads"
-    public_folder: "/images/uploads"
     create: true
     fields:
-      - { label: "Video file (short clips only)", name: "video", widget: "file", required: false, hint: "Keep it small — under ~20MB. GitHub hard-rejects anything over 100MB, and big videos slow the site down. For anything longer, use the link field below instead." }
-      - { label: "Or a YouTube / Vimeo link", name: "videoUrl", widget: "string", required: false, hint: "Paste a normal video URL (e.g. https://youtube.com/watch?v=... or https://vimeo.com/...). Recommended for anything more than a few seconds — upload it there first (Unlisted is fine) and link it here. Fill in EITHER this OR the video file above, not both." }
+      - { label: "YouTube / Vimeo link", name: "videoUrl", widget: "string", hint: "Paste a normal video URL (e.g. https://youtube.com/watch?v=... or https://vimeo.com/...). Upload the video there first (Unlisted is fine if you don't want it publicly searchable), then link it here." }
       - { label: "Caption", name: "caption", widget: "string", required: false }
       - { label: "Permalink", name: "permalink", widget: "hidden", default: false }

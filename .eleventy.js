@@ -72,8 +72,11 @@ module.exports = function (eleventyConfig) {
     // plain string instead of a one-item array — normalize defensively
     // so this can never break the build again, no matter how many
     // photos are selected.
+    // Reversed so the most recently added photo (added photos append to
+    // the end of the list) comes first — the homepage's "first N" then
+    // naturally shows the newest photos, not an arbitrary fixed set.
     var quickList = Array.isArray(quickPhotos)
-      ? quickPhotos
+      ? quickPhotos.slice().reverse()
       : quickPhotos
       ? [quickPhotos]
       : [];
