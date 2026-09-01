@@ -3,7 +3,8 @@
     "email": "cvsahoopster@gmail.com",
     "phone": "209-402-3998",
     "location": "Cardozo Middle School Gym, 3525 Santa Fe St. Riverbank, CA 95367",
-    "mapLink": ""
+    "mapLink": "",
+    "waiverPdf": "/files/april-27-2024-cvsa-liability-waiver.pdf"
   },
   "nav": [
     {
@@ -40,13 +41,15 @@
   "groups": [
     {
       "name": "Full Court Group",
-      "tag": "Thu · Sun",
-      "desc": "Competitive full-court runs for advanced players. Thursday evenings and Sunday mornings."
+      "tag": "Thu 8:00pm - 10:00pm · Sun 11:00am - 1:30pm",
+      "desc": "Competitive full-court runs for advanced players. Thursday evenings and Sunday mornings.",
+      "image": "/images/uploads/full-court-play.jpeg"
     },
     {
-      "name": "Halfcourt Group",
-      "tag": "Thu · Sun",
-      "desc": "Lower-impact, high cardio half-court games with the same competitive intensity. Age group target 35 & over."
+      "name": "Half Court Group",
+      "tag": "Thu 6:30pm - 8:00pm · Sun 1:30pm - 4:00pm",
+      "desc": "Lower-impact, high cardio half-court games with the same competitive intensity. Age group target 35 & over.",
+      "image": "/images/uploads/half-court-group-1.jpg"
     }
   ],
   "schedule": [
