@@ -19,10 +19,11 @@ permalink: /rules/
 
 ## Game format
 
+* All shots scored inside the 3-point line are counted as 1 point and all shot scored beyond the 3-point line is scored as 2 points.
 * A scoreboard is used to coordinate time and score for both Full and Half court games. 
 * The Thursday Half court program runs on a 9 minute game clock. First team to 11 or whoever is ahead at the end of the 9 minute clock. If both teams are tied at the end of regulation time, then the team which scores next (sudden death ) wins. Ball possession is determined based on the possession arrow.
 
-  <div class="note-box"><strong>Half Court Note —</strong> The Thursday evening program is special in that teams are selected prior to start of play. Players are rated for skill/position and teams are created and balanced to insure fair competitive play. An Algorithm and two apps (HoopsRater & TeamBuilder) were created to specifically achieve this.  </div>
+  <div class="note-box"><strong>Half Court Note —</strong> The Thursday evening program is special in that teams are selected prior to start of play. Players are rated for skill/position and teams are created and balanced to insure fair competitive play. An algorithm and two apps (HoopsRater & TeamBuilder) were created specifically for this purpose.  </div>
 * The Thursday and Sunday Full Court programs run on a 10 minute clock and a 30 second shot clock. Like the half court program the first to 11 or whichever team is ahead at the end of regulation time wins. The shot clock resets to 14 seconds on fouls, rim shots or a disputed call.
 * Both Half court and Full court games are to 11 straight up or whichever team is ahead at the end of 10 minutes.
 * Winning team stays on; losing team rotates out if others are waiting. The only exception to this rule is when there are 20 players on the court or 4 teams. When this occurs the following special rule will go into effect: 
@@ -40,3 +41,6 @@ permalink: /rules/
 
 * Any jewelry that could cause injury is prohibited.
 * Players should be in good health for full-contact, competitive play.
+* No rough housing or running is allowed in the gym. 
+* Food is strictly prohibited. Water and sports drinks are allowed but please pick up after yourself.
+* No hanging or dunking on the rims or throwing of the balls against the walls.
