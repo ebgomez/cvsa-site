@@ -40,12 +40,14 @@
     {
       "name": "Full Court Group",
       "tag": "Thu · Sun",
-      "desc": "Competitive full-court runs for advanced players. Thursday evenings and Sunday mornings."
+      "desc": "Competitive full-court runs for advanced players. Thursday evenings and Sunday mornings.",
+      "image": "/images/uploads/full-court-play.jpeg"
     },
     {
       "name": "Halfcourt Group",
       "tag": "Thu · Sun",
-      "desc": "Lower-impact, high cardio half-court games with the same competitive intensity. Age group target 35 & over."
+      "desc": "Lower-impact, high cardio half-court games with the same competitive intensity. Age group target 35 & over.",
+      "image": "/images/uploads/half-court-group-1.jpg"
     }
   ],
   "schedule": [
