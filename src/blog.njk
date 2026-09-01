@@ -7,6 +7,9 @@ permalink: /blog/
 <div class="news-list">
   {% for post in collections.posts %}
   <div class="news-item">
+    {% if post.data.image %}
+    <div class="news-photo">{% respImage post.data.image, post.data.title %}</div>
+    {% endif %}
     <div class="news-date">{{ post.data.date | dateDisplay }}</div>
     <div><h3><a href="{{ post.url }}" style="color:inherit;">{{ post.data.title }}</a></h3><p>{{ post.data.excerpt }}</p></div>
   </div>

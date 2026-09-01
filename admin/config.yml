@@ -66,6 +66,7 @@ collections:
               - { label: "Email", name: "email", widget: "string", required: false }
               - { label: "Phone", name: "phone", widget: "string", required: false }
               - { label: "Location", name: "location", widget: "string" }
+              - { label: "Map / Directions Link", name: "mapLink", widget: "string", required: false, hint: "Paste a Google Maps link for the gym — go to maps.google.com, search the address, click Share, copy the link. Shows as a 'Get Directions' link on the Contact page." }
               - label: "Liability Waiver (PDF)"
                 name: "waiverPdf"
                 widget: "file"
@@ -81,7 +82,14 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Publish Date", name: "date", widget: "datetime", hint: "Defaults to today when you create a new post — change it if you're backdating or scheduling something." }
+      - label: "Cover Image"
+        name: "image"
+        widget: "image"
+        required: false
+        media_folder: "/src/images/uploads"
+        public_folder: "/images/uploads"
+        hint: "Optional — shows above the post on the homepage and News page."
       - { label: "Excerpt (shows in list view)", name: "excerpt", widget: "text" }
       - { label: "Permalink", name: "permalink", widget: "string" }
       - { label: "Layout", name: "layout", widget: "hidden", default: "post.njk" }

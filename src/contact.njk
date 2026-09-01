@@ -8,13 +8,16 @@ permalink: /contact/
 <div class="note-box"><strong>Add real contact info —</strong> edit Site Settings in the admin to fill in a phone number and email address here.</div>
 {% endif %}
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;">
+<div class="two-col">
   <div>
     <h2 style="font-size:1.1rem;">Reach us directly</h2>
     <div class="contact-info">
       {% if site.contact.phone %}<div><strong>Phone:</strong> {{ site.contact.phone }}</div>{% endif %}
       {% if site.contact.email %}<div><strong>Email:</strong> {{ site.contact.email }}</div>{% endif %}
       <div><strong>Location:</strong> {{ site.contact.location }}</div>
+      {% if site.contact.mapLink %}
+      <div><a href="{{ site.contact.mapLink }}" target="_blank" rel="noopener">Get Directions</a></div>
+      {% endif %}
       {% if site.contact.waiverPdf %}
       <div><a href="{{ site.contact.waiverPdf }}" target="_blank" rel="noopener">Download Liability Waiver (PDF)</a></div>
       {% endif %}

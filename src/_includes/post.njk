@@ -9,6 +9,9 @@ layout: base.njk
 </section>
 <section class="band">
   <div class="container prose">
+    {% if image %}
+    <div class="news-photo" style="margin-bottom:24px;">{% respImage image, title %}</div>
+    {% endif %}
     {{ content | safe }}
   </div>
 </section>
