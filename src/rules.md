@@ -1,10 +1,10 @@
 ---
 layout: page.njk
 title: Rules
-subtitle: What to expect on the court.
+subtitle: What to expect in our programs.
 permalink: /rules/
 ---
-<div class="note-box"><strong>Draft content —</strong> the old site's Rules page was blank. Below is a starter template based on common organized pickup-basketball rules. Edit this in the admin to match CVSA's actual house rules before you consider it final.</div>
+
 
 ![](/images/uploads/afcb-program-rules-rev-2.jpg)
 
