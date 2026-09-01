@@ -130,7 +130,7 @@ nav.top{background:var(--navy);color:#F3EFE6;}
 .group-photo picture,.group-photo img{width:100%;height:100%;display:block;object-fit:cover;}
 .group .tag{font-family:"Oswald",sans-serif;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;display:block;}
 .group h3{font-size:1rem;color:#fff;margin-bottom:8px;}
-.group p{color:#B7BECC;font-size:0.86rem;margin:0;}
+.group-grid .group p{color:#B7BECC;font-size:0.86rem;margin:0;}
 
 .news-list{display:flex;flex-direction:column;}
 .news-item{display:grid;grid-template-columns:110px 1fr;gap:24px;padding:22px 0;border-top:1px solid var(--line);}
