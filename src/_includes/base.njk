@@ -52,9 +52,22 @@
   <footer>
     <div class="container foot-row">
       <div>© {% year %} {{ site.tagline }} · {{ site.contact.location }}</div>
-      <div style="display:flex;gap:18px;">
-        {% if site.social.facebook %}<a href="{{ site.social.facebook }}">Facebook</a>{% endif %}
-        {% if site.social.instagram %}<a href="{{ site.social.instagram }}">Instagram</a>{% endif %}
+      <div class="social-links">
+        {% if site.social.facebook %}
+        <a href="{{ site.social.facebook }}" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-2a4 4 0 0 0-4 4v3H6v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        {% endif %}
+        {% if site.social.instagram %}
+        <a href="{{ site.social.instagram }}" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none"/></svg>
+        </a>
+        {% endif %}
+        {% if site.social.groupme %}
+        <a href="{{ site.social.groupme }}" aria-label="GroupMe">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v10H8l-4 4V5z"/></svg>
+        </a>
+        {% endif %}
       </div>
     </div>
   </footer>

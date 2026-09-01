@@ -15,6 +15,9 @@ permalink: /contact/
       {% if site.contact.phone %}<div><strong>Phone:</strong> {{ site.contact.phone }}</div>{% endif %}
       {% if site.contact.email %}<div><strong>Email:</strong> {{ site.contact.email }}</div>{% endif %}
       <div><strong>Location:</strong> {{ site.contact.location }}</div>
+      {% if site.contact.waiverPdf %}
+      <div><a href="{{ site.contact.waiverPdf }}" target="_blank" rel="noopener">Download Liability Waiver (PDF)</a></div>
+      {% endif %}
     </div>
   </div>
   <div>

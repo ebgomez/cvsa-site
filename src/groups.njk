@@ -7,6 +7,9 @@ permalink: /groups/
 <div class="group-grid" style="margin-top:8px;">
   {% for g in site.groups %}
   <div class="group">
+    {% if g.image %}
+    <div class="group-photo">{% respImage g.image, g.name %}</div>
+    {% endif %}
     <span class="tag">{{ g.tag }}</span>
     <h3>{{ g.name }}</h3>
     <p>{{ g.desc }}</p>

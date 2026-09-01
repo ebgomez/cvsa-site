@@ -48,6 +48,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addAsyncShortcode("respImage", respImageShortcode);
   eleventyConfig.addPassthroughCopy({ "src/css": "css" });
   eleventyConfig.addPassthroughCopy({ "src/images": "images" });
+  eleventyConfig.addPassthroughCopy({ "src/files": "files" });
   eleventyConfig.addPassthroughCopy({ admin: "admin" });
 
   eleventyConfig.addCollection("posts", function (collectionApi) {
