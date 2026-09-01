@@ -22,6 +22,8 @@ collections:
             fields:
               - { label: "Headline", name: "heroHeadline", widget: "string" }
               - { label: "Subtext", name: "heroDek", widget: "text" }
+              - { label: "Bottom Heading (\"Ready to run with us?\")", name: "ctaHeading", widget: "string" }
+              - { label: "Bottom Text", name: "ctaText", widget: "text" }
               - label: "Why Players Stay (3 cards)"
                 name: "valueProps"
                 widget: "list"
@@ -52,6 +54,11 @@ collections:
                 options: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
               - { label: "Time", name: "time", widget: "string", hint: "Format exactly like: 6:30 PM - 8:00 PM" }
               - { label: "Groups Playing", name: "focus", widget: "string" }
+          - label: "Schedule Page"
+            name: "schedulePage"
+            widget: "object"
+            fields:
+              - { label: "Note (shown below the schedule table)", name: "note", widget: "text", hint: "The sentence about session length/sign-up shown at the bottom of the Schedule page." }
           - label: "Social Links"
             name: "social"
             widget: "object"
