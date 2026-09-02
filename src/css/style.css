@@ -179,6 +179,15 @@ form.contact-form textarea{min-height:120px;resize:vertical;}
 .contact-info{display:flex;flex-direction:column;gap:10px;color:var(--ink-soft);font-size:0.95rem;}
 .contact-info strong{color:var(--ink);}
 
+.member-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
+.member-card{display:flex;align-items:center;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;}
+.member-photo{flex:none;width:64px;height:64px;border-radius:50%;overflow:hidden;background:var(--surface-alt);}
+.member-photo picture,.member-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+.member-photo-empty{border:1px dashed var(--line);}
+.member-info h3{font-size:1rem;text-transform:none;letter-spacing:0;margin-bottom:2px;}
+.member-role{font-family:"Oswald",sans-serif;font-size:0.68rem;letter-spacing:0.05em;text-transform:uppercase;color:var(--accent-strong);margin-bottom:6px;}
+.member-contact{font-size:0.88rem;color:var(--ink-soft);}
+
 footer{background:var(--navy);color:#8A91A1;padding:32px 0;font-size:0.85rem;}
 .foot-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
 .foot-row a{color:#C7CCD8;text-decoration:none;}

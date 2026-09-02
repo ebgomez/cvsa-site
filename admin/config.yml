@@ -59,6 +59,22 @@ collections:
             widget: "object"
             fields:
               - { label: "Note (shown below the schedule table)", name: "note", widget: "text", hint: "The sentence about session length/sign-up shown at the bottom of the Schedule page." }
+          - label: "Member Directory (password-protected page)"
+            name: "memberDirectory"
+            widget: "list"
+            required: false
+            hint: "⚠️ Shows on the password-protected /members/ page — but that password only protects the live website page, not this data itself, which still lives in the GitHub repo behind this site. Make sure that repo is set to Private (on GitHub: repo → Settings → Danger Zone → Change visibility) before adding real phone numbers/emails here."
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Role / Note", name: "role", widget: "string", required: false }
+              - { label: "Phone", name: "phone", widget: "string", required: false }
+              - { label: "Email", name: "email", widget: "string", required: false }
+              - label: "Photo"
+                name: "photo"
+                widget: "image"
+                required: false
+                media_folder: "/src/images/uploads"
+                public_folder: "/images/uploads"
           - label: "Social Links"
             name: "social"
             widget: "object"

@@ -30,6 +30,10 @@
     {
       "text": "Contact",
       "url": "/contact/"
+    },
+    {
+      "text": "Members Contacts",
+      "url": "/members/"
     }
   ],
   "social": {
@@ -77,6 +81,7 @@
   "schedulePage": {
     "note": "Games run in one-month sessions — sign up at the start of each block to guarantee your spot."
   },
+  "memberDirectory": [],
   "title": "CVSA Hoops",
   "home": {
     "heroHeadline": "Real pickup basketball, run right, twice a week.",

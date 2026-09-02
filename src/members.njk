@@ -1,0 +1,27 @@
+---
+layout: page.njk
+title: Members Contacts
+subtitle: Player contact directory — members only.
+permalink: /members/
+---
+{% if site.memberDirectory.length == 0 %}
+<div class="note-box"><strong>No members added yet —</strong> add people through the admin (Site Settings → Member Directory) and they'll appear here.</div>
+{% else %}
+<div class="member-grid">
+  {% for m in site.memberDirectory %}
+  <div class="member-card">
+    {% if m.photo %}
+    <div class="member-photo">{% respImage m.photo, m.name %}</div>
+    {% else %}
+    <div class="member-photo member-photo-empty"></div>
+    {% endif %}
+    <div class="member-info">
+      <h3>{{ m.name }}</h3>
+      {% if m.role %}<div class="member-role">{{ m.role }}</div>{% endif %}
+      {% if m.phone %}<div class="member-contact">{{ m.phone }}</div>{% endif %}
+      {% if m.email %}<div class="member-contact"><a href="mailto:{{ m.email }}">{{ m.email }}</a></div>{% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
