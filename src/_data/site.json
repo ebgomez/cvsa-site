@@ -52,6 +52,12 @@
       "phone": "209-402-3998",
       "email": "ebgomez@yahoo.com",
       "photo": "/images/uploads/img_3488.jpeg"
+    },
+    {
+      "name": "Matt Friedrich",
+      "role": "Member",
+      "phone": "209-988-8899",
+      "photo": "/images/uploads/img_6221.jpeg"
     }
   ],
   "groups": [
