@@ -45,6 +45,15 @@
     "groupme": ""
   },
   "tagline": "Central Valley Sports Association",
+  "memberDirectory": [
+    {
+      "name": "Ernesto Gomez",
+      "role": "Commissioner",
+      "phone": "209-402-3998",
+      "email": "ebgomez@yahoo.com",
+      "photo": "/images/uploads/img_3488.jpeg"
+    }
+  ],
   "groups": [
     {
       "name": "Full Court Group",
@@ -81,10 +90,6 @@
       "focus": "Half Court, Over 45 Age Group"
     }
   ],
-  "schedulePage": {
-    "note": "Games run in one-month sessions — sign up at the start of each block to guarantee your spot."
-  },
-  "memberDirectory": [],
   "title": "CVSA Hoops",
   "home": {
     "heroHeadline": "Real pickup basketball, run right, twice a week.",
