@@ -23,6 +23,13 @@ async function respImageShortcode(src, alt, sizes) {
       formats: ["webp", "jpeg"],
       outputDir: "_site/img/",
       urlPath: "/img/",
+      // Phone photos often carry an EXIF "please rotate this" flag rather
+      // than storing pixels upright. By default this library only
+      // auto-corrects a narrow set of rotations (90°/270°) — force it for
+      // every orientation value (including 180°/mirrored) so a photo that
+      // looks correct in the CMS never comes out sideways or upside-down
+      // in the resized output.
+      fixOrientation: true,
       filenameFormat: function (id, filePath, width, format) {
         const name = path.basename(filePath, path.extname(filePath));
         return `${name}-${width}w.${format}`;
