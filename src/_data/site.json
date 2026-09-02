@@ -36,6 +36,9 @@
       "url": "/members/"
     }
   ],
+  "schedulePage": {
+    "note": "Games run in one-month sessions — sign up at the start of each block to guarantee your spot."
+  },
   "social": {
     "facebook": "https://www.facebook.com/groups/CVSABBALL/?ref=share_group_link&mibextid=wwXIfr",
     "instagram": "https://www.instagram.com/cvsa.basketball?igsi=NTc4MTIwNjQ2YQ==",
@@ -87,7 +90,7 @@
     "heroHeadline": "Real pickup basketball, run right, twice a week.",
     "heroDek": "Organized full and half-court games for adults 15+ in Riverbank — no chaos, no drama, just consistent, competitive runs for ball players of all ages.",
     "ctaHeading": "Ready to run with us?",
-    "ctaText": "Spots are limited to keep games playable. Sign up for the next session or drop in as a walk-in — first-timers always welcome.",
+    "ctaText": "Spots are limited to keep games playable. Sign up for the next session or just drop in to check it out — first-timers always welcome.",
     "valueProps": [
       {
         "title": "Actually coordinated",
