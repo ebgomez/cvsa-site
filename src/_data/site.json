@@ -92,7 +92,8 @@
     {
       "name": "Nephrey Donasco",
       "phone": "209-494-4634",
-      "photo": "/images/uploads/nephrey-donasco.jpg"
+      "photo": "/images/uploads/nephrey-donasco.jpg",
+      "role": "Member Full Court"
     },
     {
       "name": "Ray Rosas",
@@ -128,6 +129,105 @@
       "role": "Member Full Court",
       "phone": "510-967-4314",
       "photo": "/images/uploads/dan-nguyen.jpg"
+    },
+    {
+      "name": "Kevin Chantha (Doc)",
+      "role": "Member Half Court",
+      "phone": "209-404-7490",
+      "photo": "/images/uploads/kevin-doc-chantha.jpg"
+    },
+    {
+      "name": "Jake Gorman",
+      "phone": "209-303-6442",
+      "photo": "/images/uploads/jale-gorman.jpg"
+    },
+    {
+      "name": "Andrew Mix",
+      "role": "Member Full Court",
+      "phone": "209-818-9523",
+      "photo": "/images/uploads/andrew-mix.jpg"
+    },
+    {
+      "name": "Adolph Lopez",
+      "phone": "209-765-8948",
+      "photo": "/images/uploads/adolph-lopez.jpg"
+    },
+    {
+      "name": "Brien Jones",
+      "role": "Member Half Court",
+      "phone": "408-580-4305",
+      "photo": "/images/uploads/brien-jones.jpg"
+    },
+    {
+      "name": "Nepher Donasco",
+      "role": "Member Half Court",
+      "phone": "209-494-4632",
+      "photo": "/images/uploads/nepher-donasco.jpg"
+    },
+    {
+      "name": "Scott Von Stade",
+      "role": "Member Half Court",
+      "phone": "206-606-4632",
+      "photo": "/images/uploads/scott-von-stade.jpg"
+    },
+    {
+      "name": "Jessie Ixta",
+      "role": "Member Half Court",
+      "phone": "209-204-0298",
+      "photo": "/images/uploads/jessie-ixta.jpg"
+    },
+    {
+      "name": "Caleb Whorten",
+      "role": "Member Full Court",
+      "phone": "209-484-4633",
+      "photo": "/images/uploads/caleb-whorten.jpg"
+    },
+    {
+      "name": "Marco Tapia",
+      "role": "Commissioner Full Court ",
+      "phone": "209-918-5152",
+      "photo": "/images/uploads/marco-tapia-2.jpg"
+    },
+    {
+      "name": "Sebastian Jimenez",
+      "role": "Member Full Court",
+      "phone": "209-683-6339",
+      "photo": "/images/uploads/sebastian-jimenez.jpg"
+    },
+    {
+      "name": "Tim Martinez",
+      "role": "Co-Commissioner Full Court",
+      "phone": "209-232-0910",
+      "photo": "/images/uploads/tim-martinez.jpg"
+    },
+    {
+      "name": "Benny Dominguez",
+      "role": "Member Full Court",
+      "phone": "209-681-9895",
+      "photo": "/images/uploads/benny-dominguez.jpg"
+    },
+    {
+      "name": "Ryan Mauldin",
+      "role": "Member Half Court",
+      "phone": "209-606-5865",
+      "photo": "/images/uploads/ryan-mauldin.jpg"
+    },
+    {
+      "name": "Harry Hathaway",
+      "role": "Member Half Court",
+      "phone": "510-846-2813",
+      "photo": "/images/uploads/harry-hathaway.jpg"
+    },
+    {
+      "name": "Conner Ramos",
+      "phone": "209-203-4917",
+      "photo": "/images/uploads/conner-ramos.jpg"
+    },
+    {
+      "name": "Daniel Gallego",
+      "role": "Member Full Court",
+      "phone": "209-404-1690",
+      "photo": "/images/uploads/daniel-gallego.jpg"
     }
   ],
   "groups": [
