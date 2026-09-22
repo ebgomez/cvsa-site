@@ -64,6 +64,70 @@
       "role": "Member Full Court",
       "phone": "209-996-8640",
       "photo": "/images/uploads/malaquais-vega.jpg"
+    },
+    {
+      "name": "Welton Jordan",
+      "role": "",
+      "phone": "209 338 4595",
+      "photo": "/images/uploads/welton-jordan.jpeg"
+    },
+    {
+      "name": "Ralph Afortunado",
+      "role": "Member Full Court",
+      "phone": "209-324-7154",
+      "photo": "/images/uploads/ralph-afortunado-2.jpg"
+    },
+    {
+      "name": "Matt Sarkis",
+      "role": "Member Full Court",
+      "phone": "209-602-2324",
+      "photo": "/images/uploads/matt-sarkis.jpg"
+    },
+    {
+      "name": "Andrew Mauldin",
+      "role": "Member Full Court",
+      "phone": "209-581-3536",
+      "photo": "/images/uploads/andrew-mauldin.jpg"
+    },
+    {
+      "name": "Nephrey Donasco",
+      "phone": "209-494-4634",
+      "photo": "/images/uploads/nephrey-donasco.jpg"
+    },
+    {
+      "name": "Ray Rosas",
+      "role": "Member Full Court",
+      "phone": "209-649-3703",
+      "photo": "/images/uploads/ray-rosas.jpg"
+    },
+    {
+      "name": "Vishal Bassi (TJ)",
+      "role": "Member Full Court",
+      "phone": "209-609-3354",
+      "photo": "/images/uploads/vishal-bassi.jpg"
+    },
+    {
+      "name": "Ray Rosas Jr",
+      "role": "Member Full Court",
+      "phone": "209-552-9049",
+      "photo": "/images/uploads/ray-rosas-jr.jpg"
+    },
+    {
+      "name": "Xavier Rosas",
+      "role": "Member Full Court",
+      "phone": "209-552-9420",
+      "photo": "/images/uploads/xavier-rosas.jpg"
+    },
+    {
+      "name": "Aivin Alkurgi",
+      "phone": "209-581-2434",
+      "photo": "/images/uploads/aivin-alkurgi.jpg"
+    },
+    {
+      "name": "Dan Nguyen",
+      "role": "Member Full Court",
+      "phone": "510-967-4314",
+      "photo": "/images/uploads/dan-nguyen.jpg"
     }
   ],
   "groups": [
